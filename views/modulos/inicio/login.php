@@ -1,6 +1,6 @@
 <?php
-use Gesp\Controllers\UsuarioController;
-if (isset($_POST['usuario']) && (isset($_POST['senha']))) {
+use TrainingCenter\Controllers\UsuarioController;
+if (isset($_POST['email']) && (isset($_POST['senha']))) {
     //require_once "./controllers/UsuarioController.php";
     $login = new UsuarioController();
     echo $login->iniciaSessao();
@@ -11,7 +11,7 @@ if (isset($_POST['usuario']) && (isset($_POST['senha']))) {
         <div class="card-header bg-dark">
             <a href="<?= SERVERURL ?>inicio" class="brand-link">
                 <img src="<?= SERVERURL ?>views/dist/img/logo.png" alt="GesP Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-                <h5><span class="brand-text font-weight-light"><?= NOMESIS ?> - Gestão de Pessoas</span></h5>
+                <h5><span class="brand-text font-weight-light"><?= NOMESIS ?></span></h5>
             </a>
         </div>
         <div class="card-body register-card-body">
@@ -19,10 +19,10 @@ if (isset($_POST['usuario']) && (isset($_POST['senha']))) {
             <form action="" method="POST">
                 <label>Usuário</label>
                 <div class="input-group mb-3">
-                    <input name="usuario" type="text" class="form-control" placeholder="Usuário" maxlength="7" required>
+                    <input type="email" name="email" class="form-control" placeholder="E-mail" maxlength="70" required>
                     <div class="input-group-append">
                         <div class="input-group-text">
-                            <span class="fas fa-user"></span>
+                            <span class="fas fa-email"></span>
                         </div>
                     </div>
                 </div>
@@ -53,7 +53,7 @@ if (isset($_POST['usuario']) && (isset($_POST['senha']))) {
             </div>
         </div>
         <div class="card-footer bg-light-gradient text-center">
-            <img src="<?= SERVERURL ?>views/dist/img/CULTURA_HORIZONTAL_pb_positivo.png" alt="logo cultura">
+            Empresa.com
         </div>
     </div><!-- /.card -->
 </div>

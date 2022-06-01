@@ -1,9 +1,9 @@
 <?php
-namespace Gesp\Controllers;
+namespace TrainingCenter\Controllers;
 require_once "../views/plugins/fpdf/fpdf.php";
 
 use FPDF;
-use Gesp\Controllers\Pessoa\FeriasController;
+use TrainingCenter\Controllers\Pessoa\FeriasController;
 
 class PdfController extends FPDF
 {

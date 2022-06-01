@@ -1,5 +1,5 @@
 <?php
-namespace Gesp\Models;
+namespace TrainingCenter\Models;
 
 use PDO;
 use PDOStatement;

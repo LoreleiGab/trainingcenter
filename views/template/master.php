@@ -1,7 +1,7 @@
 <?php
 
-use Gesp\Controllers\UsuarioController;
-use Gesp\Controllers\ViewsController;
+use TrainingCenter\Controllers\UsuarioController;
+use TrainingCenter\Controllers\ViewsController;
 
 $template = new ViewsController();
 
@@ -53,24 +53,16 @@ elseif ($view == 'login'):
     require_once "./views/modulos/inicio/login.php";
 elseif ($view == 'cadastro'):
     require_once "./views/modulos/inicio/cadastro.php";
-elseif ($view == 'script_importacao_parte1'):
-    require_once "./views/modulos/inicio/script_importacao_parte1.php";
-elseif ($view == 'script_importacao_parte2'):
-    require_once "./views/modulos/inicio/script_importacao_parte2.php";
-elseif ($view == 'script_importacao_parte3'):
-    require_once "./views/modulos/inicio/script_importacao_parte3.php";
-elseif ($view == 'aniversariante_lista'):
-    require_once "./views/modulos/inicio/aniversariante_lista.php";
 elseif ($view == 'recupera_senha'):
     require_once "./views/modulos/inicio/recupera_senha.php";
 elseif($view == 'resete_senha'):
     require_once "./views/modulos/inicio/resete_senha.php";
 else:
-    session_start(['name' => 'gesp']);
+    session_start(['name' => 'trainingcenter']);
     require_once "./controllers/UsuarioController.php";
     $usuario = new UsuarioController();
 
-    if (!isset($_SESSION['usuario_id_g'])) {
+    if (!isset($_SESSION['usuario_id_tc'])) {
         $usuario->forcarFimSessao();
     }
     ?>

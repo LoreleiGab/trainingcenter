@@ -1,5 +1,5 @@
 <?php
-$id = $_SESSION['usuario_id_g'];
+$id = $_SESSION['usuario_id_tc'];
 require_once "./controllers/UsuarioController.php";
 $objUsuario = new UsuarioController();
 $usuario = $objUsuario->recuperaUsuario($id)->fetch();

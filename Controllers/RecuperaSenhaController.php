@@ -1,9 +1,9 @@
 <?php
-namespace Gesp\Controllers;
+namespace TrainingCenter\Controllers;
 
-use Gesp\Models\DbModel;
-use Gesp\Models\MainModel;
-use Gesp\Models\RecuperaSenhaModel;
+use TrainingCenter\Models\DbModel;
+use TrainingCenter\Models\MainModel;
+use TrainingCenter\Models\RecuperaSenhaModel;
 use PDO;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -81,7 +81,7 @@ class RecuperaSenhaController extends RecuperaSenhaModel
 
             $email->setFrom(SMTP);
             $email->FromName = "GesP";
-            $email->addReplyTo('no-reply@gesp.com.br');
+            $email->addReplyTo('no-reply@trainingcenter.com.br');
             $email->addAddress($endEmail);
 
             $email->isHTML(true);

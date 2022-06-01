@@ -1,6 +1,6 @@
 <?php
 
-use Gesp\Models\MainModel;
+use TrainingCenter\Models\MainModel;
 
 require_once "../config/configGeral.php";
 require_once "../config/configAPP.php";

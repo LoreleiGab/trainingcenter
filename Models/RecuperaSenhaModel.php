@@ -1,5 +1,5 @@
 <?php
-namespace Gesp\Models;
+namespace TrainingCenter\Models;
 
 class RecuperaSenhaModel extends MainModel
 {

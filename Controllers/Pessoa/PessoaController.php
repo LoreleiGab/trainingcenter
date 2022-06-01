@@ -1,9 +1,9 @@
 <?php
-namespace Gesp\Controllers\Pessoa;
+namespace TrainingCenter\Controllers\Pessoa;
 
-use Gesp\Models\Pessoa\PessoaModel;
-use Gesp\Models\MainModel;
-use Gesp\Models\DbModel;
+use TrainingCenter\Models\Pessoa\PessoaModel;
+use TrainingCenter\Models\MainModel;
+use TrainingCenter\Models\DbModel;
 use PDO;
 
 class PessoaController extends PessoaModel

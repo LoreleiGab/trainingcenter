@@ -1,9 +1,9 @@
 <?php
-namespace Gesp\Models;
+namespace TrainingCenter\Models;
 
 use DateTime;
 use PDO;
-use Gesp\Models\DbModel;
+use TrainingCenter\Models\DbModel;
 
 class MainModel extends DbModel
 {
@@ -218,7 +218,7 @@ class MainModel extends DbModel
     protected function log($descricao)
     {
         $dadosLog = [
-            'usuario_id' => $_SESSION['usuario_id_g'],
+            'usuario_id' => $_SESSION['usuario_id_tc'],
             'ip' => $_SERVER['REMOTE_ADDR'],
             'data' => date('Y-m-d H:i:s'),
             'descricao' => $descricao

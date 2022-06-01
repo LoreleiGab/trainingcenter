@@ -1,6 +1,6 @@
 <?php
 
-use Gesp\Controllers\UsuarioController;
+use TrainingCenter\Controllers\UsuarioController;
 
 $usuarioObj = new UsuarioController();
 $usuarioObj->gravarLog("Fez Logout");

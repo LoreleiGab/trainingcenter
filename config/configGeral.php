@@ -5,9 +5,9 @@ function siteURL($sistema): string
     $domainName = "{$_SERVER['HTTP_HOST']}/$sistema";
     return $protocol.$domainName;
 }
-define('SERVERURL', siteURL("gesp/"));
+define('SERVERURL', siteURL("trainingcenter/"));
 define('PDFURL', SERVERURL."pdf/");
-define('NOMESIS', "GesP");
+define('NOMESIS', "TrainingCenter");
 define('SMTP', 'no.replay@teste.com');
 define('SENHASMTP', 'senha');
 date_default_timezone_set('America/Fortaleza');

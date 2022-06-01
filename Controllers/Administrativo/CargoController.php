@@ -1,8 +1,8 @@
 <?php
-namespace Gesp\Controllers\Administrativo;
+namespace TrainingCenter\Controllers\Administrativo;
 
-use Gesp\Models\MainModel;
-use Gesp\Models\DbModel;
+use TrainingCenter\Models\MainModel;
+use TrainingCenter\Models\DbModel;
 
 class CargoController extends MainModel
 {

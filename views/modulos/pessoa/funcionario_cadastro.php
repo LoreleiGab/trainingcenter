@@ -1,7 +1,7 @@
 <?php
 
-use Gesp\Controllers\Pessoa\PessoaController;
-use Gesp\Models\MainModel;
+use TrainingCenter\Controllers\Pessoa\PessoaController;
+use TrainingCenter\Models\MainModel;
 
 $id = $_GET['id'] ?? null;
 

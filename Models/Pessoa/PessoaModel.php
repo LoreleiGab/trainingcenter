@@ -1,7 +1,7 @@
 <?php
-namespace Gesp\Models\Pessoa;
+namespace TrainingCenter\Models\Pessoa;
 
-use Gesp\Models\MainModel;
+use TrainingCenter\Models\MainModel;
 use PDO;
 
 class PessoaModel extends MainModel

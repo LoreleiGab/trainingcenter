@@ -1,6 +1,6 @@
 <?php
 
-use Gesp\Controllers\Pessoa\FeriasController;
+use TrainingCenter\Controllers\Pessoa\FeriasController;
 
 $url = SERVERURL.'api/departamento_supervisao.php';
 $urlPdfs = SERVERURL.'api/gerar_pdfs_ferias.php';

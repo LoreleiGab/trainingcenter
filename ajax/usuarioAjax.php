@@ -1,6 +1,6 @@
 <?php
 
-use Gesp\Controllers\UsuarioController;
+use TrainingCenter\Controllers\UsuarioController;
 
 require_once "../config/configGeral.php";
 require_once "../config/autoload_ajax.php";

@@ -1,6 +1,6 @@
 <?php
 
-use Gesp\Controllers\Administrativo\RecuperaSenhaController;
+use TrainingCenter\Controllers\Administrativo\RecuperaSenhaController;
 
 require_once "../config/configGeral.php";
 require_once "../config/autoload_ajax.php";

@@ -1,6 +1,6 @@
 <?php
 
-use Gesp\Controllers\Administrativo\CargoController;
+use TrainingCenter\Controllers\Administrativo\CargoController;
 $cargoObj = new CargoController();
 
 $cargos = $cargoObj->listarCargo();

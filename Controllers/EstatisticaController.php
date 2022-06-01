@@ -1,8 +1,8 @@
 <?php
 
-namespace Gesp\Controllers;
+namespace TrainingCenter\Controllers;
 
-use Gesp\Controllers\Pessoa\PessoaController;
+use TrainingCenter\Controllers\Pessoa\PessoaController;
 
 class EstatisticaController extends Pessoa\PessoaController
 {

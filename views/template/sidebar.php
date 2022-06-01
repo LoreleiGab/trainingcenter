@@ -1,10 +1,10 @@
 <?php
 
-use Gesp\Controllers\ViewsController;
+use TrainingCenter\Controllers\ViewsController;
 
 $view = new ViewsController();
 
-    $nomeUser = explode(' ', $_SESSION['nome_g'])[0];
+    $nomeUser = explode(' ', $_SESSION['nome_tc'])[0];
 
 ?>
 <!-- Brand Logo -->

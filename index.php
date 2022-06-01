@@ -5,7 +5,7 @@ require_once "config/configGeral.php";
 require_once "config/autoload.php";
 require_once "Controllers/Administrativo/CargoController.php";
 
-use Gesp\Controllers\ViewsController;
+use TrainingCenter\Controllers\ViewsController;
 
 $template = new ViewsController();
 
