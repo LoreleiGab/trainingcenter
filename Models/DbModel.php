@@ -146,28 +146,16 @@ class DbModel
     }
 
     /**
-     * Método para apagar (despublicar)
+     * Método para apagar (delete)
      * @param string $table
      * @param int $id
-     * @param bool $capac
      * @return bool|PDOStatement
      */
     protected function apaga($table, $id){
         $pdo = self::connection();
-        $sql = "UPDATE $table SET publicado = 0 WHERE id = :id";
+        $sql = "DELETE FROM $table WHERE id = :id";
         $statement = $pdo->prepare($sql);
         $statement->bindValue(":id", $id);
-        $statement->execute();
-
-        return $statement;
-    }
-
-    protected function apagaEspecial($table, $campo, $campo_id){
-
-        $pdo = self::connection();
-        $sql = "UPDATE $table SET publicado = 0 WHERE $campo = :$campo";
-        $statement = $pdo->prepare($sql);
-        $statement->bindValue(":$campo", $campo_id);
         $statement->execute();
 
         return $statement;
@@ -192,15 +180,12 @@ class DbModel
         return $statement;
     }
 
-    // Método para pegar a informação
-
     /**
+     * <p>Método para pegar a informação</p>
      * @param string $table
      * <p>tabela a ser consultada no banco</p>
      * @param int $id
      * <p>ID que deve ser procurado</p>
-     * @param bool $capac [opcional]
-     * <p><strong>FALSE</strong> por padrão. Quando <strong>TRUE</strong>, faz a consulta no banco de dados do sistema CAPAC</p>
      * @return bool|PDOStatement
      */
     protected function getInfo($table, $id){
@@ -213,16 +198,14 @@ class DbModel
         return $statement;
     }
 
-    // Lista publicados
-    protected function listaPublicado($table,$id = null) {
-        if(!empty($id)){
-            $filtro_id = "AND id = :id";
-        }
-        else{
-            $filtro_id = "";
-        }
+    /**
+     * <p>Listagem</p>
+     * @param $table
+     * @return array|false
+     */
+    protected function lista($table) {
         $pdo = self::connection();
-        $sql = "SELECT * FROM $table WHERE publicado = 1 $filtro_id ORDER BY 2";
+        $sql = "SELECT * FROM $table ORDER BY 2";
         $statement = $pdo->query($sql);
         $statement->execute();
 

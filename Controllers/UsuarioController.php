@@ -30,6 +30,7 @@ class UsuarioController extends UsuarioModel
                 session_start(['name' => 'trainingcenter']);
                 $_SESSION['usuario_id_tc'] = $usuario['id'];
                 $_SESSION['nome_tc'] = $usuario['apelido'];
+                $_SESSION['profile_tc'] = $usuario['profile_id'];
 
                 //MainModel::gravarLog('Fez Login');
 

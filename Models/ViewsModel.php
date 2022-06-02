@@ -23,15 +23,19 @@ class ViewsModel
 
     protected function exibirViewModel($view, $modulo = "") {
         $whitelist = [
-            'area_impressao',
             'cadastro',
             'edita',
             'inicio',
             'login',
             'logout',
-            'aniversariante_lista',
-            'cargo_cadastro',
-            'cargo_lista',
+            'grupo_tipo_cadastro',
+            'grupo_tipo_lista',
+            'local_dor_cadastro',
+            'local_dor_lista',
+            'membro_cadastro',
+            'membro_lista',
+            'modalidade_cadastro',
+            'modalidade_lista',
             'recupera_senha',
             'usuario_cadastro',
             'usuario_ativo_lista',

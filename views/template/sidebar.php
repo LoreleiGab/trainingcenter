@@ -37,7 +37,7 @@ $view = new ViewsController();
                 include $menu;
             }
             ?>
-            <?php if ($_SESSION['acesso_g'] == 1) : ?>
+            <?php if ($_SESSION['profile_tc'] == 1) : ?>
                 <li class="nav-header">ADMINISTRATIVO</li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
@@ -49,92 +49,27 @@ $view = new ViewsController();
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="<?= SERVERURL ?>administrativo/cargo_lista" class="nav-link" id="cargo_lista">
+                            <a href="<?= SERVERURL ?>administrativo/local_dor_lista" class="nav-link" id="local_dor_lista">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Cargo</p>
+                                <p>Local da dor</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= SERVERURL ?>administrativo/curso_lista" class="nav-link" id="curso_lista">
+                            <a href="<?= SERVERURL ?>administrativo/membro_lista" class="nav-link" id="membro_lista">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Curso</p>
+                                <p>Membro dominante</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= SERVERURL ?>administrativo/departamento_lista" class="nav-link" id="departamento_lista">
+                            <a href="<?= SERVERURL ?>administrativo/grupo_tipo_lista" class="nav-link" id="grupo_tipo_lista">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Departamento</p>
+                                <p>Tipo de Grupo</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= SERVERURL ?>administrativo/estado_civil_lista" class="nav-link" id="estado_civil_lista">
+                            <a href="<?= SERVERURL ?>administrativo/usuario_lista" class="nav-link" id="usuario_lista">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Estado civil</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="<?= SERVERURL ?>administrativo/genero_lista" class="nav-link" id="genero_lista">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Gênero</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="<?= SERVERURL ?>administrativo/grau_instrucao_lista" class="nav-link" id="grau_instrucao_lista">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Grau de instrução</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="<?= SERVERURL ?>administrativo/padrao_lista" class="nav-link" id="padrao_lista">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Padrão</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="<?= SERVERURL ?>administrativo/orgao_lista" class="nav-link" id="orgao_lista">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Orgão</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="<?= SERVERURL ?>administrativo/relacao_juridico_lista" class="nav-link" id="relacao_juridico_lista">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Relação jurídico</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="<?= SERVERURL ?>administrativo/supervisao_lista" class="nav-link" id="supervisao_lista">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Supervisão</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>
-                                    Usuários
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="<?= SERVERURL ?>administrativo/usuario_ativo_lista" class="nav-link" id="usuario_ativo_lista">
-                                        <i class="fas fa-circle nav-icon"></i>
-                                        <p>Ativo</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="<?= SERVERURL ?>administrativo/usuario_inativo_lista" class="nav-link" id="usuario_inativo_lista">
-                                        <i class="fas fa-circle nav-icon"></i>
-                                        <p>Inativo</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a href="<?= SERVERURL ?>administrativo/vacancia_lista" class="nav-link" id="vacancia_lista">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Vacância</p>
+                                <p>Usuários</p>
                             </a>
                         </li>
                     </ul>

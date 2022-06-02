@@ -4,27 +4,27 @@ namespace TrainingCenter\Controllers\Administrativo;
 use TrainingCenter\Models\MainModel;
 use TrainingCenter\Models\DbModel;
 
-class CargoController extends MainModel
+class MembroController extends MainModel
 {
     /**
-     * <p>Cadastro de cargo</p>
+     * <p>Cadastro de membro</p>
      * @param $dados
      * @return string
      */
-    public function cadastrarCargo($dados):string
+    public function cadastrarMembro($dados):string
     {
         unset($dados['_method']);
         $dados = MainModel::limpaPost($dados);
 
-        $insert = DbModel::insert("cargos", $dados);
+        $insert = DbModel::insert("members", $dados);
         if ($insert->rowCount() >= 1) {
             $id = $this->connection()->lastInsertId();
             $alerta = [
                 'alerta' => 'sucesso',
-                'titulo' => 'Cargo cadastrado!',
+                'titulo' => 'Membro cadastrado!',
                 'texto' => 'Dados cadastrados com sucesso!',
                 'tipo' => 'success',
-                'location' => SERVERURL . "administrativo/cargo_cadastro&id=".MainModel::encryption($id)
+                'location' => SERVERURL . "administrativo/membro_cadastro&id=".MainModel::encryption($id)
             ];
         } else {
             $alerta = [
@@ -38,26 +38,26 @@ class CargoController extends MainModel
     }
 
     /**
-     * <p>Edição de cargo</p>
+     * <p>Edição de membro</p>
      * @param $dados
      * @param $id
      * @return string
      */
-    public function editarCargo($dados, $id):string
+    public function editarMembro($dados, $id):string
     {
         unset($dados['_method']);
         unset($dados['id']);
         $dados = MainModel::limpaPost($dados);
         $id = MainModel::decryption($id);
-        $update = DbModel::update('cargos', $dados, $id);
+        $update = DbModel::update('members', $dados, $id);
 
         if ($update->rowCount() >= 1 || DbModel::connection()->errorCode() == 0) {
             $alerta = [
                 'alerta' => 'sucesso',
-                'titulo' => 'Cargo alterado com sucesso!',
+                'titulo' => 'Membro alterado com sucesso!',
                 'texto' => 'Dados alterados com sucesso!',
                 'tipo' => 'success',
-                'location' => SERVERURL . "administrativo/cargo_cadastro&id=".MainModel::encryption($id)
+                'location' => SERVERURL . "administrativo/membro_cadastro&id=".MainModel::encryption($id)
             ];
         } else {
             $alerta = [
@@ -71,38 +71,38 @@ class CargoController extends MainModel
     }
 
     /**
-     * <p>Lista para cargo</p>
+     * <p>Lista para membro</p>
      * @return array|false
      */
-    public function listarCargo()
+    public function listarMembro()
     {
-        return DbModel::listaPublicado('cargos');
+        return DbModel::lista('members');
     }
 
     /**
-     * <p>Recupera um cargo através do id</p>
+     * <p>Recupera um membro através do id</p>
      * @param int|string $id
      * @return false|mixed|object
      */
-    public function recuperarCargo($id)
+    public function recuperarMembro($id)
     {
-        return $this->getInfo('cargos', $this->decryption($id))->fetchObject();
+        return $this->getInfo('members', $this->decryption($id))->fetchObject();
     }
     /**
-     * <p>Apagar cargo</p>
+     * <p>Apagar membro</p>
      * @param $id
      * @return string
      */
-    public function apagarCargo($id):string
+    public function apagarMembro($id):string
     {
-        $apagar = $this->apaga("cargos",$id);
+        $apagar = $this->apaga("members",$id);
         if ($apagar->rowCount() >= 1){
             $alerta = [
                 'alerta' => 'sucesso',
-                'titulo' => 'Cargo apagado!',
+                'titulo' => 'Membro apagado!',
                 'texto' => 'Dados alterados com sucesso!',
                 'tipo' => 'success',
-                'location' => SERVERURL . 'administrativo/cargo_lista'
+                'location' => SERVERURL . 'administrativo/membro_lista'
             ];
         } else {
             $alerta = [

@@ -60,7 +60,7 @@ if ($id){
                                     <a class="nav-link active" id="custom-tabs-one-home-tab" data-toggle="pill" href="#custom-tabs-one-home" role="tab" aria-controls="custom-tabs-one-home" aria-selected="true">Resumo</a>
                                 </li>
                             <?php } ?>
-                            <?php if ($_SESSION['acesso_g'] != 3): // 3-leitor ?>
+                            <?php if ($_SESSION['profile_tc'] != 3): // 3-leitor ?>
                                 <li class="nav-item">
                                     <a class="nav-link <?= (!$id) ? "active" : "" ?>" id="custom-tabs-one-pessoal-tab" data-toggle="pill" href="#custom-tabs-one-pessoal" role="tab" aria-controls="custom-tabs-one-pessoal" aria-selected="false">Principal</a>
                                 </li>
@@ -365,7 +365,7 @@ if ($id){
                             <a href="<?= SERVERURL ?>pessoa/<?= $link ?? "funcionario_ativo_lista" ?>" class="btn btn-default pull-left">
                                 Voltar
                             </a>
-                            <?php if ($_SESSION['acesso_g'] != 3): // 3-leitor ?>
+                            <?php if ($_SESSION['profile_tc'] != 3): // 3-leitor ?>
                                 <button type="submit" class="btn btn-primary float-right">Gravar</button>
                             <?php endif; ?>
                         </div>
