@@ -30,6 +30,8 @@ class ViewsModel
             'logout',
             'equipe_cadastro',
             'equipe_lista',
+            'grupo_cadastro',
+            'grupo_lista',
             'grupo_tipo_cadastro',
             'grupo_tipo_lista',
             'horas_dormidas_cadastro',
