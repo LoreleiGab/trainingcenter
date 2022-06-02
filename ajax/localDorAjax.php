@@ -6,17 +6,17 @@ require_once "../config/configGeral.php";
 require_once "../config/autoload_ajax.php";
 
 if (isset($_POST['_method'])) {
-    $membroObj = new LocalDorController();
+    $localDorObj = new LocalDorController();
 
     switch ($_POST['_method']){
         case "cadastraLocalDor":
-            echo $membroObj->cadastrarLocalDor($_POST);
+            echo $localDorObj->cadastrarLocalDor($_POST);
             break;
         case "editaLocalDor":
-            echo $membroObj->editarLocalDor($_POST, $_POST['id']);
+            echo $localDorObj->editarLocalDor($_POST, $_POST['id']);
             break;
         case "apagaLocalDor":
-            echo $membroObj->apagarLocalDor($_POST['id']);
+            echo $localDorObj->apagarLocalDor($_POST['id']);
             break;
         default:
             include_once "../config/destroySession.php";
