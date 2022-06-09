@@ -156,7 +156,7 @@ CREATE TABLE IF NOT EXISTS `jumps` (
 
 -- Copiando estrutura para tabela sportsdb.members
 CREATE TABLE IF NOT EXISTS `members` (
-  `id` smallint(2) NOT NULL,
+  `id` smallint(2) NOT NULL AUTO_INCREMENT,
   `membro_dominante` varchar(8) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `membro_dominante_UNIQUE` (`membro_dominante`)
@@ -176,7 +176,7 @@ CREATE TABLE IF NOT EXISTS `modalities` (
 
 -- Copiando estrutura para tabela sportsdb.positions
 CREATE TABLE IF NOT EXISTS `positions` (
-  `id` smallint(2) NOT NULL,
+  `id` smallint(2) NOT NULL AUTO_INCREMENT,
   `modality_id` smallint(2) NOT NULL,
   `posição` varchar(20) NOT NULL,
   PRIMARY KEY (`id`),
@@ -203,7 +203,7 @@ INSERT IGNORE INTO `proflles` (`id`, `perfil`) VALUES
 
 -- Copiando estrutura para tabela sportsdb.sitepains
 CREATE TABLE IF NOT EXISTS `sitepains` (
-  `id` smallint(2) NOT NULL,
+  `id` smallint(2) NOT NULL AUTO_INCREMENT,
   `local da dor` char(1) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -212,7 +212,7 @@ CREATE TABLE IF NOT EXISTS `sitepains` (
 
 -- Copiando estrutura para tabela sportsdb.sleeping_hours
 CREATE TABLE IF NOT EXISTS `sleeping_hours` (
-  `id` smallint(2) NOT NULL,
+  `id` smallint(2) NOT NULL AUTO_INCREMENT,
   `horas_dormidas` varchar(15) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `horas_dormidas_UNIQUE` (`horas_dormidas`)
