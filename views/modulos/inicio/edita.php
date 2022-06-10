@@ -1,8 +1,11 @@
 <?php
+
+use TrainingCenter\Controllers\UsuarioController;
+
 $id = $_SESSION['usuario_id_tc'];
-require_once "./controllers/UsuarioController.php";
+
 $objUsuario = new UsuarioController();
-$usuario = $objUsuario->recuperaUsuario($id)->fetch();
+$usuario = $objUsuario->recuperaUsuario($id)->fetchObject();
 
 ?>
 <!-- Content Header (Page header) -->
@@ -30,11 +33,11 @@ $usuario = $objUsuario->recuperaUsuario($id)->fetch();
                     <!-- /.card-header -->
                     <!-- form start -->
                     <div class="card-body register-card-body">
-                        <label>Nome:</label> <?=$usuario['nome_completo']?>
+                        <label>Nome:</label> <?=$usuario->apelido?>
                         <hr>
-                        <label>Usuário:</label> <?=$usuario['usuario']?>
+                        <label>Telefone:</label> <?=$usuario->telefone?>
                         <hr>
-                        <label>E-mail:</label> <?=$usuario['email']?>
+                        <label>E-mail:</label> <?=$usuario->email?>
                     </div>
                 </div>
                 <!-- /.card -->
@@ -83,39 +86,3 @@ $usuario = $objUsuario->recuperaUsuario($id)->fetch();
     </div><!-- /.container-fluid -->
 </div>
 <!-- /.content -->
-<script>
-    const url_local = '<?= $url_local ?>';
-
-    let instituicao = document.querySelector('#instituicao');
-
-    $(document).ready(function () {
-        let idInstituicao = $('#instituicao option:checked').val();
-        let local_id = <?= $usuario['local_id'] ?>;
-        getLocal(idInstituicao, local_id);
-    });
-
-    instituicao.addEventListener('change', async e => {
-        let idInstituicao = $('#instituicao option:checked').val();
-        getLocal(idInstituicao);
-    });
-
-    function getLocal(instituicao_id, local_id = false) {
-        fetch(`${url_local}?instituicao_id=${instituicao_id}`)
-            .then(response => response.json())
-            .then(locais => {
-                $('#local option').remove();
-                $('#local').append('<option value="">Selecione uma opção...</option>');
-
-                for (const local of locais) {
-                    if (local.id == local_id) {
-                        $('#local').append(`<option value='${local.id}' selected>${local.local}</option>`);
-                    } else {
-                        $('#local').append(`<option value='${local.id}'>${local.local}</option>`);
-                    }
-                }
-                $('#local').unbind('mousedown');
-                $('#local').removeAttr('readonly');
-
-            })
-    }
-</script>
