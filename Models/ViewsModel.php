@@ -33,6 +33,8 @@ class ViewsModel
             'atleta_lista',
             'equipe_cadastro',
             'equipe_lista',
+            'esforco_cadastro',
+            'esforco_lista',
             'grupo_cadastro',
             'grupo_lista',
             'grupo_tipo_cadastro',
