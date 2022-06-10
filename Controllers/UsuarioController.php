@@ -175,12 +175,21 @@ class UsuarioController extends UsuarioModel
         return MainModel::sweetAlert($alerta);
     }
 
+    /**
+     * <p>Recupera um usuário através do id</p>
+     * @param $id
+     * @return false|\PDOStatement
+     */
     public function recuperaUsuario($id) {
-        $usuario = DbModel::getInfo('users',$id);
-        return $usuario;
+        return $this->consultaSimples("
+            SELECT u.*, p.perfil
+            FROM users as u
+            INNER JOIN proflles p on u.profile_id = p.id
+            WHERE u.id = '$id'
+        ");
     }
 
     public function recuperaEmail($email){
-        return UsuarioModel::getExisteEmail($email);;
+        return UsuarioModel::getExisteEmail($email);
     }
 }
