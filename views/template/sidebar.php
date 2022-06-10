@@ -55,6 +55,13 @@ $view = new ViewsController();
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="<?= SERVERURL ?>administrativo/horas_lista" class="nav-link" id="horas_lista">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Horas dormidas</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
                             <a href="<?= SERVERURL ?>administrativo/membro_lista" class="nav-link" id="membro_lista">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Membro dominante</p>
