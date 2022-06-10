@@ -1,6 +1,6 @@
 <?php
 
-use TrainingCenter\Controllers\Administrativo\GrupoTipoController;
+use TrainingCenter\Controllers\Preparador\GrupoTipoController;
 
 require_once "../config/configGeral.php";
 require_once "../config/autoload_ajax.php";

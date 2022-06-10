@@ -1,30 +1,30 @@
 <?php
-namespace TrainingCenter\Controllers\Administrativo;
+namespace TrainingCenter\Controllers\Preparador;
 
 use TrainingCenter\Models\MainModel;
 use TrainingCenter\Models\DbModel;
 
-class GrupoController extends MainModel
+class EquipeController extends MainModel
 {
     /**
-     * <p>Cadastro de grupo</p>
+     * <p>Cadastro de equipe</p>
      * @param $dados
      * @return string
      */
-    public function cadastrarGrupo($dados):string
+    public function cadastrarEquipe($dados):string
     {
         unset($dados['_method']);
         $dados = MainModel::limpaPost($dados);
 
-        $insert = DbModel::insert("groups", $dados);
+        $insert = DbModel::insert("teams", $dados);
         if ($insert->rowCount() >= 1) {
             $id = $this->connection()->lastInsertId();
             $alerta = [
                 'alerta' => 'sucesso',
-                'titulo' => 'Grupo cadastrado!',
+                'titulo' => 'Equipe cadastrada!',
                 'texto' => 'Dados cadastrados com sucesso!',
                 'tipo' => 'success',
-                'location' => SERVERURL . "administrativo/grupo_cadastro&id=".MainModel::encryption($id)
+                'location' => SERVERURL . "preparador/equipe_cadastro&id=".MainModel::encryption($id)
             ];
         } else {
             $alerta = [
@@ -38,26 +38,26 @@ class GrupoController extends MainModel
     }
 
     /**
-     * <p>Edição de grupo</p>
+     * <p>Edição de equipe</p>
      * @param $dados
      * @param $id
      * @return string
      */
-    public function editarGrupo($dados, $id):string
+    public function editarEquipe($dados, $id):string
     {
         unset($dados['_method']);
         unset($dados['id']);
         $dados = MainModel::limpaPost($dados);
         $id = MainModel::decryption($id);
-        $update = DbModel::update('groups', $dados, $id);
+        $update = DbModel::update('teams', $dados, $id);
 
         if ($update->rowCount() >= 1 || DbModel::connection()->errorCode() == 0) {
             $alerta = [
                 'alerta' => 'sucesso',
-                'titulo' => 'Grupo alterado com sucesso!',
+                'titulo' => 'Equipe alterada com sucesso!',
                 'texto' => 'Dados alterados com sucesso!',
                 'tipo' => 'success',
-                'location' => SERVERURL . "administrativo/grupo_cadastro&id=".MainModel::encryption($id)
+                'location' => SERVERURL . "preparador/equipe_cadastro&id=".MainModel::encryption($id)
             ];
         } else {
             $alerta = [
@@ -71,38 +71,38 @@ class GrupoController extends MainModel
     }
 
     /**
-     * <p>Lista para grupo</p>
+     * <p>Lista para equipe</p>
      * @return array|false
      */
-    public function listarGrupo()
+    public function listarEquipe()
     {
-        return DbModel::lista('groups');
+        return DbModel::lista('teams');
     }
 
     /**
-     * <p>Recupera um grupo através do id</p>
+     * <p>Recupera um equipe através do id</p>
      * @param int|string $id
      * @return false|mixed|object
      */
-    public function recuperarGrupo($id)
+    public function recuperarEquipe($id)
     {
-        return $this->getInfo('groups', $this->decryption($id))->fetchObject();
+        return $this->getInfo('teams', $this->decryption($id))->fetchObject();
     }
     /**
-     * <p>Apagar grupo</p>
+     * <p>Apagar equipe</p>
      * @param $id
      * @return string
      */
-    public function apagarGrupo($id):string
+    public function apagarEquipe($id):string
     {
-        $apagar = $this->apaga("groups",$id);
+        $apagar = $this->apaga("teams",$id);
         if ($apagar->rowCount() >= 1){
             $alerta = [
                 'alerta' => 'sucesso',
-                'titulo' => 'Grupo apagado!',
+                'titulo' => 'Equipe apagada!',
                 'texto' => 'Dados alterados com sucesso!',
                 'tipo' => 'success',
-                'location' => SERVERURL . 'administrativo/grupo_lista'
+                'location' => SERVERURL . 'preparador/equipe_lista'
             ];
         } else {
             $alerta = [

@@ -1,5 +1,5 @@
 <?php
-namespace TrainingCenter\Controllers\Administrativo;
+namespace TrainingCenter\Controllers\Preparador;
 
 use TrainingCenter\Models\MainModel;
 use TrainingCenter\Models\DbModel;
@@ -24,7 +24,7 @@ class GrupoTipoController extends MainModel
                 'titulo' => 'Tipo de Grupo cadastrado!',
                 'texto' => 'Dados cadastrados com sucesso!',
                 'tipo' => 'success',
-                'location' => SERVERURL . "administrativo/grupo_tipo_cadastro&id=".MainModel::encryption($id)
+                'location' => SERVERURL . "preparador/grupo_tipo_cadastro&id=".MainModel::encryption($id)
             ];
         } else {
             $alerta = [
@@ -57,7 +57,7 @@ class GrupoTipoController extends MainModel
                 'titulo' => 'Tipo de Grupo alterado com sucesso!',
                 'texto' => 'Dados alterados com sucesso!',
                 'tipo' => 'success',
-                'location' => SERVERURL . "administrativo/grupo_tipo_cadastro&id=".MainModel::encryption($id)
+                'location' => SERVERURL . "preparador/grupo_tipo_cadastro&id=".MainModel::encryption($id)
             ];
         } else {
             $alerta = [
@@ -102,7 +102,7 @@ class GrupoTipoController extends MainModel
                 'titulo' => 'Tipo de Grupo apagado!',
                 'texto' => 'Dados alterados com sucesso!',
                 'tipo' => 'success',
-                'location' => SERVERURL . 'administrativo/grupo_tipo_lista'
+                'location' => SERVERURL . 'preparador/grupo_tipo_lista'
             ];
         } else {
             $alerta = [

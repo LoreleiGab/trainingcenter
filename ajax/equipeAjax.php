@@ -1,6 +1,6 @@
 <?php
 
-use TrainingCenter\Controllers\Administrativo\EquipeController;
+use TrainingCenter\Controllers\Preparador\EquipeController;
 
 require_once "../config/configGeral.php";
 require_once "../config/autoload_ajax.php";

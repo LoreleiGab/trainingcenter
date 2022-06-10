@@ -7,7 +7,8 @@ class ViewsModel
         $modulos = [
             "inicio",
             "administrativo",
-            "pessoa"
+            "atleta",
+            "preparador"
         ];
 
         if (in_array($mod, $modulos)) {
@@ -28,6 +29,8 @@ class ViewsModel
             'inicio',
             'login',
             'logout',
+            'atleta_cadastro',
+            'atleta_lista',
             'equipe_cadastro',
             'equipe_lista',
             'grupo_cadastro',
