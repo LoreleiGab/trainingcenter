@@ -14,7 +14,7 @@ $view = $template->exibirViewController();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>GesP | SMC</title>
+    <title>Training Center</title>
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="<?= SERVERURL ?>node_modules/@fortawesome/fontawesome-free/css/all.min.css">
     <!-- Ionicons -->
@@ -84,21 +84,6 @@ else:
             <?php include $template->sidebar(); ?>
         </aside>
 
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-            <!-- Control sidebar content goes here -->
-            <div class="p-3">
-                <h5>Sobre</h5>
-                <p>Versão 1.0</p>
-                <br>
-                <p>Desenvolvido por:</p>
-                <p>STI - Sistema de Informação</p>
-                <br>
-                <p>Suporte:</p>
-                <p>smcsistemasinfo@gmail.com</p>
-            </div>
-        </aside>
-        <!-- /.control-sidebar -->
 
         <!-- Main Footer -->
         <footer class="main-footer">

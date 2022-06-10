@@ -60,12 +60,7 @@ $view = new ViewsController();
                                 <p>Membro dominante</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="<?= SERVERURL ?>administrativo/grupo_tipo_lista" class="nav-link" id="grupo_tipo_lista">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Tipo de Grupo</p>
-                            </a>
-                        </li>
+
                         <li class="nav-item">
                             <a href="<?= SERVERURL ?>administrativo/usuario_lista" class="nav-link" id="usuario_lista">
                                 <i class="far fa-circle nav-icon"></i>
@@ -76,56 +71,29 @@ $view = new ViewsController();
                 </li>
             <?php endif; ?>
 
-            <li class="nav-header">PESSOAS</li>
+            <li class="nav-header">PREPARADOR</li>
             <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <i class="fas fa-user-tie"></i>
-                    <p>
-                        Funcionários
-                        <i class="right fas fa-angle-left"></i>
-                    </p>
+                <a href="<?= SERVERURL ?>preparador/grupo_tipo_lista" class="nav-link" id="grupo_tipo_lista">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Tipo de Grupo</p>
                 </a>
-                <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="<?= SERVERURL ?>pessoa/funcionario_ativo_lista" class="nav-link" id="funcionario_ativo_lista">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Ativo</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="<?= SERVERURL ?>pessoa/funcionario_cedido_lista" class="nav-link" id="funcionario_cedido_lista">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Cedido</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="<?= SERVERURL ?>pessoa/funcionario_inativo_lista" class="nav-link" id="funcionario_inativo_lista">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Inativo</p>
-                        </a>
-                    </li>
-                </ul>
             </li>
+
+            <li class="nav-header">ATLETA</li>
             <li class="nav-item">
-                <a href="<?= SERVERURL ?>pessoa/ferias_lista" class="nav-link" id="ferias_lista">
-                    <i class="fas fa-umbrella-beach"></i>
-                    <p>Férias</p>
+                <a href="<?= SERVERURL ?>atleta/esforco_lista" class="nav-link" id="esforco_lista">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Percepção do esforço</p>
                 </a>
             </li>
 
             <li class="nav-header">CONTA</li>
             <li class="nav-item">
                 <a href="<?= SERVERURL ?>inicio/edita" class="nav-link">
-                    <i class="fa fa-user"></i> 
+                    <i class="fa fa-user"></i>&nbsp;&nbsp;
                     <p>Minha conta</p>
                 </a>
             </li>
-            <!--<li class="nav-item">
-                <a href="http://smcsistemas.prefeitura.sp.gov.br/manual/siscontrat" target="_blank" class="nav-link">
-                    <i class="fa fa-question"></i>&nbsp;
-                    <p>Ajuda</p>
-                </a>
-            </li>-->
             <li class="nav-item">
                 <a href="<?= SERVERURL ?>inicio/logout" class="nav-link">
                     <i class="fas fa-sign-out-alt"></i>&nbsp; <p>Sair</p>
