@@ -54,17 +54,32 @@ $view = new ViewsController();
                                 <p>Local da dor</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="<?= SERVERURL ?>administrativo/horas_lista" class="nav-link" id="horas_lista">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Horas dormidas</p>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
+                  
+                        <li class="nav-item">   
                             <a href="<?= SERVERURL ?>administrativo/membro_lista" class="nav-link" id="membro_lista">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Membro dominante</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">   
+                            <a href="<?= SERVERURL ?>administrativo/modalidade_lista" class="nav-link" id="modalidade_lista">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Modalidade</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">   
+                            <a href="<?= SERVERURL ?>administrativo/posicao_lista" class="nav-link" id="posicao_lista">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Posição</p>
+                            </a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a href="<?= SERVERURL ?>administrativo/horas_dormidas_lista" class="nav-link" id="horas_dormidas_lista">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Horas Dormidas</p>
                             </a>
                         </li>
 
