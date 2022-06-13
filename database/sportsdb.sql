@@ -178,7 +178,7 @@ CREATE TABLE IF NOT EXISTS `modalities` (
 CREATE TABLE IF NOT EXISTS `positions` (
   `id` smallint(2) NOT NULL AUTO_INCREMENT,
   `modality_id` smallint(2) NOT NULL,
-  `posição` varchar(20) NOT NULL,
+  `posicao` varchar(20) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_positions_modalities1_idx` (`modality_id`),
   CONSTRAINT `fk_positions_modalities1` FOREIGN KEY (`modality_id`) REFERENCES `modalities` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
