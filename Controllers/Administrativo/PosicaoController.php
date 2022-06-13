@@ -74,6 +74,7 @@ class PosicaoController extends MainModel
      * <p>Lista para posição</p>
      * @return array|false
      */
+
     public function listarPosicao()
     {
         return DbModel::lista('positions');
@@ -87,6 +88,15 @@ class PosicaoController extends MainModel
     public function recuperarPosicao($id)
     {
         return $this->getInfo('positions', $this->decryption($id))->fetchObject();
+    }
+    public function recuperarModalidade($id)
+    {
+        return $this->consultaSimples("
+            SELECT p.id, p.posicao, m.modalidade
+            FROM positions p 
+            INNER JOIN modalities m on p.modality_id = m.id
+            WHERE id = '$id'");
+        
     }
     /**
      * <p>Apagar posição</p>

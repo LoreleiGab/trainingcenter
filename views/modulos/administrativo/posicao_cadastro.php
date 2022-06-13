@@ -7,6 +7,7 @@ $id = $_GET['id'] ?? null;
 
 if ($id){
     $posicao = $posicaoObj->recuperarPosicao($id);
+
 }
 ?>
 <!-- Content Header (Page header) -->
@@ -40,7 +41,12 @@ if ($id){
                         <div class="card-body">
                             <div class="row">
                                 <div class="form-group col-md">
-                                    <label for="membro_dominante">Posição do Atleta: *</label>
+                                    <label for="posicao">Modalidade da posição: *</label>
+                                    <select class="form-control select2bs4" id="modality_id" name="modality_id" required>
+                                        <option value="">Selecione uma opção...</option>
+                                        <?php $posicaoObj->geraOpcao("modalities",$posicao->modality_id?? null); ?>
+                                    </select>
+                                    <label for="posicao">Posição do Atleta: *</label>
                                     <input type="text" class="form-control" id="posicao" name="posicao" maxlength="8" value="<?= $posicao->posicao ?? null ?>" required>
                                 </div>
                             </div>
