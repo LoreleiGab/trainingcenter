@@ -3,7 +3,7 @@
 use TrainingCenter\Controllers\Administrativo\PosicaoController;
 $posicaoObj = new PosicaoController();
 
-$posicoes = $posicaoObj->listarposicao();
+$posicoes = $posicaoObj->listarPosicao();
 ?>
 <!-- Content Header (Page header) -->
 <div class="content-header">
@@ -48,7 +48,7 @@ $posicoes = $posicaoObj->listarposicao();
                                 <td class="d-flex flex-row justify-content-around">
                                     <a href="<?= SERVERURL . "administrativo/posicao_cadastro&id=" . $posicaoObj->encryption($posicao->id) ?>" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i> Editar</a>
                                     <form class="form-horizontal formulario-ajax" method="POST" action="<?= SERVERURL ?>ajax/posicaoAjax.php" role="form" data-form="delete">
-                                        <input type="hidden" name="_method" value="apagaposicao">
+                                        <input type="hidden" name="_method" value="apagaPosicao">
                                         <input type="hidden" name="id" value="<?= $posicao->id ?>">
                                         <button type="submit" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> Apagar</button>
                                         <div class="resposta-ajax"></div>
