@@ -2,6 +2,7 @@
 
 use TrainingCenter\Controllers\UsuarioController;
 use TrainingCenter\Controllers\ViewsController;
+session_start(['name' => 'trainingcenter']);
 
 $template = new ViewsController();
 
@@ -58,7 +59,6 @@ elseif ($view == 'recupera_senha'):
 elseif($view == 'resete_senha'):
     require_once "./views/modulos/inicio/resete_senha.php";
 else:
-    session_start(['name' => 'trainingcenter']);
     require_once "./controllers/UsuarioController.php";
     $usuario = new UsuarioController();
 
