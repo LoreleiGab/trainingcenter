@@ -95,6 +95,12 @@ $view = new ViewsController();
 
             <li class="nav-header">PREPARADOR</li>
             <li class="nav-item">
+                <a href="<?= SERVERURL ?>preparador/atleta_lista" class="nav-link" id="atleta_lista">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Atleta</p>
+                </a>
+            </li>
+            <li class="nav-item">
                 <a href="<?= SERVERURL ?>preparador/grupo_tipo_lista" class="nav-link" id="grupo_tipo_lista">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Tipo de Grupo</p>

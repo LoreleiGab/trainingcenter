@@ -76,7 +76,15 @@ class AtletaController extends MainModel
      */
     public function listarAtleta()
     {
-        return DbModel::lista('athletes');
+        return $this->consultaSimples("
+            SELECT a.id, a.nome_completo, a.apelido, a.data_nascimento, t.equipe, m.modalidade, p.posicao, m2.membro_dominante, u.id as user_id
+            FROM athletes a
+            LEFT JOIN teams t on t.id = a.team_id
+            LEFT JOIN modalities m on a.modality_id = m.id
+            LEFT JOIN positions p on a.position_id = p.id
+            LEFT JOIN members m2 on a.member_id = m2.id
+            INNER JOIN users u on a.user_id = u.id
+        ")->fetchAll(\PDO::FETCH_OBJ);
     }
 
     /**
@@ -113,5 +121,25 @@ class AtletaController extends MainModel
             ];
         }
         return MainModel::sweetAlert($alerta);
+    }
+
+    public function geraOpcaoNovoAtleta($selected = "")
+    {
+        $consulta = $this->consultaSimples("
+            SELECT u.id, u.apelido
+            FROM users u 
+            LEFT JOIN athletes a on u.id = a.user_id
+            WHERE a.id IS NULL ORDER BY u.apelido
+        ");
+        if ($consulta->rowCount() >= 1) {
+            $options = $consulta->fetchAll(\PDO::FETCH_NUM);
+            foreach ($options as $option) {
+                if ($option[0] == $selected) {
+                    echo "<option value='" . $option[0] . "' selected >" . $option[1] . "</option>";
+                } else {
+                    echo "<option value='" . $option[0] . "'>" . $option[1] . "</option>";
+                }
+            }
+        }
     }
 }
