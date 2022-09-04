@@ -163,6 +163,9 @@ CREATE TABLE IF NOT EXISTS `members` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Copiando dados para a tabela sportsdb.members: ~0 rows (aproximadamente)
+INSERT IGNORE INTO `members` (`id`, `membro_dominante`) VALUES
+   (1, 'Esquerdo'),
+   (2, 'Direito');
 
 -- Copiando estrutura para tabela sportsdb.modalities
 CREATE TABLE IF NOT EXISTS `modalities` (
@@ -177,8 +180,8 @@ CREATE TABLE IF NOT EXISTS `modalities` (
 -- Copiando estrutura para tabela sportsdb.positions
 CREATE TABLE IF NOT EXISTS `positions` (
   `id` smallint(2) NOT NULL AUTO_INCREMENT,
-  `modality_id` smallint(2) NOT NULL,
   `posicao` varchar(20) NOT NULL,
+  `modality_id` smallint(2) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_positions_modalities1_idx` (`modality_id`),
   CONSTRAINT `fk_positions_modalities1` FOREIGN KEY (`modality_id`) REFERENCES `modalities` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -204,7 +207,7 @@ INSERT IGNORE INTO `proflles` (`id`, `perfil`) VALUES
 -- Copiando estrutura para tabela sportsdb.sitepains
 CREATE TABLE IF NOT EXISTS `sitepains` (
   `id` smallint(2) NOT NULL AUTO_INCREMENT,
-  `local da dor` char(1) NOT NULL,
+  `local_da_dor` char(1) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
