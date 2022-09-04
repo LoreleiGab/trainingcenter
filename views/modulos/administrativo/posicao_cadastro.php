@@ -46,6 +46,8 @@ if ($id){
                                         <option value="">Selecione uma opção...</option>
                                         <?php $posicaoObj->geraOpcao("modalities",$posicao->modality_id ?? null); ?>
                                     </select>
+                                </div>
+                                <div class="form-group col-md">
                                     <label for="posicao">Posição do Atleta: *</label>
                                     <input type="text" class="form-control" id="posicao" name="posicao" maxlength="20" value="<?= $posicao->posicao ?? null ?>" required>
                                 </div>
