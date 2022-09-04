@@ -111,23 +111,6 @@ $(function () {
     });
 });
 
-$(function () {
-    $(".tabela-aniversariantes").each(function(){
-        $(this).DataTable({
-            "language": {
-                "url": './views/plugins/datatables/Portuguese-Brasil_completo.json'
-            },
-            "responsive": true, "lengthChange": true, "autoWidth": false,
-            "buttons": ["copy", "excel", "pdf", "print"],
-            "dom":
-            //"<'row'<'col-sm-7'B><'col-sm-2 text-right'l><'col-sm-3'f>>" +
-                "<'row'<'col-sm-4'l><'col-sm-4 text-center'B><'col-sm-4'f>>" +
-                "<'row'<'col-sm-12'tr>>" +
-                "<'row'<'col-sm-5'i><'col-sm-7'p>>",
-        }).buttons().container().appendTo('#table1_wrapper .col-md-6:eq(0)');
-    });
-});
-
 /* /telefone */
 function mascara(o, f) {
     v_obj = o;
@@ -334,23 +317,6 @@ $('#dinheiro').ready(function () {
 
 });
 
-$('#arquivarEdital').on('show.bs.modal', function (e) {
-    let edital = $(e.relatedTarget).attr('data-name');
-    let id = $(e.relatedTarget).attr('data-id');
-
-    $(this).find('p').text(`Tem certeza que deseja excluir o edital ${edital} ?`);
-    $(this).find('#id').attr('value', `${id}`);
-})
-
-
-$('#vetacao').on('show.bs.modal', function (e) {
-    let nome = $(e.relatedTarget).attr('data-name');
-    let evento_id = $(e.relatedTarget).attr('data-id');
-
-    $(this).find('p').text(`Tem certeza que deseja vetar o evento ${nome} ?`);
-    $(this).find('#evento_id').attr('value', `${evento_id}`);
-})
-
 $(document).ready(function () {
     //Initialize Select2 Elements
     $('.select2').select2();
@@ -359,4 +325,16 @@ $(document).ready(function () {
         theme: 'bootstrap4',
         language: 'pt-BR'
     });
+});
+
+$(document).ready(function(){
+    $('.altura').mask('0,00', {reverse: true});
+    $(".altura").change(function(){
+        $("#value").html($(this).val().replace(/\D/g,''))
+    })
+
+    $('.peso').mask('000,0', {reverse: true});
+    $(".peso").change(function(){
+        $("#value").html($(this).val().replace(/\D/g,''))
+    })
 });

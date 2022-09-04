@@ -66,15 +66,15 @@ if ($id){
                                 </div>
                                 <div class="form-group col-md-1">
                                     <label for="altura">Altura: *</label>
-                                    <input type="text" class="form-control" id="altura" name="altura" value="<?= $atleta->altura ?? null ?>" required>
+                                    <input type="text" class="form-control altura" id="altura" name="altura" maxlength="4" value="<?= $atleta->altura ?? null ?>" required>
                                 </div>
                                 <div class="form-group col-md-1">
                                     <label for="peso">Peso: *</label>
-                                    <input type="text" class="form-control" id="peso" name="peso" value="<?= $atleta->peso ?? null ?>" required>
+                                    <input type="text" class="form-control peso" id="peso" name="peso" maxlength="5" value="<?= $atleta->peso ?? null ?>" required>
                                 </div>
                                 <div class="form-group col-md-1">
                                     <label for="percentual_gordura">% Gordura: *</label>
-                                    <input type="text" class="form-control" id="percentual_gordura" name="percentual_gordura" value="<?= $atleta->percentual_gordura ?? null ?>" required>
+                                    <input type="number" class="form-control" id="percentual_gordura" name="percentual_gordura" min="0" max="99" value="<?= $atleta->percentual_gordura ?? null ?>" required>
                                 </div>
                             </div>
                             <div class="row">
