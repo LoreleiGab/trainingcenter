@@ -10,19 +10,16 @@ if (isset($_POST['_method'])) {
 
     switch ($_POST['_method']){
         case "cadastraUsuario":
-            echo $usuarioObj->cadastrar($_POST);
+            echo $usuarioObj->cadastrarUsuario($_POST);
             break;
         case "editaUsuario":
-            echo $usuarioObj->editar($_POST, $_POST['pessoa_id']);
+            echo $usuarioObj->editarUsuario($_POST, $_POST['id']);
             break;
         case "trocaSenha":
             echo $usuarioObj->trocarSenha($_POST['id']);
             break;
-        case "removerUsuario":
-            echo $usuarioObj->remover($_POST['pessoa_id']);
-            break;
-        case "reativarUsuario":
-            echo $usuarioObj->reativarUsuario($_POST['pessoa_id']);
+        case "apagaUsuario":
+            echo $usuarioObj->apagarUsuario($_POST['id']);
             break;
         default:
             include_once "../config/destroySession.php";

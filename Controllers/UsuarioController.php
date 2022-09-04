@@ -62,25 +62,10 @@ class UsuarioController extends UsuarioModel
         return header("Location: ".SERVERURL);
     }
 
-    public function insereUsuario($dados) {
+    public function cadastrarUsuario($dados) {
         $erro = false;
-        $dados = [];
-        foreach ($_POST as $campo => $post) {
-            if (($campo != "senha2") && ($campo != "_method")) {
-                $dados[$campo] = MainModel::limparString($post);
-            }
-        }
-
-        // Valida Senha
-        if ($_POST['senha'] != $_POST['senha2']) {
-            $erro = true;
-            $alerta = [
-                'alerta' => 'simples',
-                'titulo' => "Erro!",
-                'texto' => "As senhas inseridas não conferem. Tente novamente",
-                'tipo' => "error"
-            ];
-        }
+        unset($dados['_method']);
+        $dados = MainModel::limpaPost($dados);
 
         // Valida email unique
         $consultaEmail = DbModel::consultaSimples("SELECT email FROM users WHERE email = '{$dados['email']}'");
@@ -95,15 +80,16 @@ class UsuarioController extends UsuarioModel
         }
 
         if (!$erro) {
-            $dados['senha'] = MainModel::encryption($dados['senha']);
+            $dados['password'] = MainModel::encryption($dados['password']);
             $insere = DbModel::insert('users', $dados);
+            $id = $this->connection()->lastInsertId();
             if ($insere) {
                 $alerta = [
                     'alerta' => 'sucesso',
                     'titulo' => 'Usuário Cadastrado!',
-                    'texto' => 'Usuário cadastrado com Sucesso!',
+                    'texto' => 'Usuário cadastrado com sucesso!<br> Senha temporária: <b>training9865!#</b>',
                     'tipo' => 'success',
-                    'location' => SERVERURL
+                    'location' => SERVERURL . "administrativo/usuario_cadastro&id=".MainModel::encryption($id)
                 ];
             }
         }
@@ -111,9 +97,10 @@ class UsuarioController extends UsuarioModel
     }
 
     /* edita */
-    public function editaUsuario($dados, $id){
+    public function editarUsuario($dados, $id){
         unset($dados['_method']);
         unset($dados['id']);
+        $id = MainModel::decryption($id);
         $dados = MainModel::limpaPost($dados);
         $edita = DbModel::update('users', $dados, $id);
         if ($edita) {
@@ -122,7 +109,7 @@ class UsuarioController extends UsuarioModel
                 'titulo' => 'Usuário',
                 'texto' => 'Informações alteradas com sucesso!',
                 'tipo' => 'success',
-                'location' => SERVERURL.'inicio/edita'
+                'location' => SERVERURL . "administrativo/usuario_cadastro&id=".MainModel::encryption($id)
             ];
         } else {
             $alerta = [
@@ -130,7 +117,7 @@ class UsuarioController extends UsuarioModel
                 'titulo' => 'Erro!',
                 'texto' => 'Erro ao salvar!',
                 'tipo' => 'error',
-                'location' => SERVERURL.'inicio/edita'
+                'location' => SERVERURL . "administrativo/usuario_cadastro&id=".MainModel::encryption($id)
             ];
         }
         return MainModel::sweetAlert($alerta);
@@ -175,21 +162,59 @@ class UsuarioController extends UsuarioModel
         return MainModel::sweetAlert($alerta);
     }
 
+    public function listarUsuario()
+    {
+        return $this->consultaSimples("
+            SELECT u.id, u.apelido, p.perfil
+            FROM users u 
+            INNER JOIN profiles p ON u.profile_id = p.id
+        ")->fetchAll(PDO::FETCH_OBJ);
+    }
+
     /**
      * <p>Recupera um usuário através do id</p>
      * @param $id
      * @return false|\PDOStatement
      */
-    public function recuperaUsuario($id) {
+    public function recuperarUsuario($id)
+    {
+        $id = MainModel::decryption($id);
         return $this->consultaSimples("
             SELECT u.*, p.perfil
-            FROM users as u
-            INNER JOIN proflles p on u.profile_id = p.id
+            FROM users u
+            INNER JOIN profiles p ON u.profile_id = p.id
             WHERE u.id = '$id'
-        ");
+        ")->fetchObject();
     }
 
     public function recuperaEmail($email){
         return UsuarioModel::getExisteEmail($email);
+    }
+
+    /**
+     * <p>Apagar usuário</p>
+     * @param $id
+     * @return string
+     */
+    public function apagarUsuario($id):string
+    {
+        $apagar = $this->apaga("users",$id);
+        if ($apagar->rowCount() >= 1){
+            $alerta = [
+                'alerta' => 'sucesso',
+                'titulo' => 'Usuário apagado!',
+                'texto' => 'Dados apagados com sucesso!',
+                'tipo' => 'success',
+                'location' => SERVERURL . 'administrativo/usuario_lista'
+            ];
+        } else {
+            $alerta = [
+                'alerta' => 'simples',
+                'titulo' => 'Oops! Algo deu Errado!',
+                'texto' => 'Falha ao salvar os dados no servidor, tente novamente mais tarde',
+                'tipo' => 'error',
+            ];
+        }
+        return MainModel::sweetAlert($alerta);
     }
 }

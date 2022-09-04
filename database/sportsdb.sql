@@ -190,7 +190,7 @@ CREATE TABLE IF NOT EXISTS `positions` (
 -- Copiando dados para a tabela sportsdb.positions: ~0 rows (aproximadamente)
 
 -- Copiando estrutura para tabela sportsdb.proflles
-CREATE TABLE IF NOT EXISTS `proflles` (
+CREATE TABLE IF NOT EXISTS `profiles` (
   `id` smallint(1) NOT NULL AUTO_INCREMENT,
   `perfil` varchar(18) NOT NULL,
   PRIMARY KEY (`id`),
@@ -198,7 +198,7 @@ CREATE TABLE IF NOT EXISTS `proflles` (
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- Copiando dados para a tabela sportsdb.proflles: ~4 rows (aproximadamente)
-INSERT IGNORE INTO `proflles` (`id`, `perfil`) VALUES
+INSERT IGNORE INTO `profiles` (`id`, `perfil`) VALUES
 	(4, 'Atleta'),
 	(1, 'Fisiologista'),
 	(3, 'Preparador Físico'),
@@ -248,8 +248,8 @@ CREATE TABLE IF NOT EXISTS `users` (
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email_UNIQUE` (`email`),
-  KEY `fk_users_proflles1_idx` (`profile_id`),
-  CONSTRAINT `fk_users_proflles1` FOREIGN KEY (`profile_id`) REFERENCES `proflles` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  KEY `fk_users_profiles1_idx` (`profile_id`),
+  CONSTRAINT `fk_users_profiles1` FOREIGN KEY (`profile_id`) REFERENCES `profiles` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- Copiando dados para a tabela sportsdb.users: ~1 rows (aproximadamente)

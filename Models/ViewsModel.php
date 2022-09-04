@@ -53,8 +53,7 @@ class ViewsModel
             'posicao_lista',
             'recupera_senha',
             'usuario_cadastro',
-            'usuario_ativo_lista',
-            'usuario_inativo_lista',
+            'usuario_lista',
         ];
         if (self::verificaModulo($modulo)) {
             if (in_array($view, $whitelist)) {
