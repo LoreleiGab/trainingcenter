@@ -333,7 +333,7 @@ $(document).ready(function(){
         $("#value").html($(this).val().replace(/\D/g,''))
     })
 
-    $('.peso').mask('000,0', {reverse: true});
+    $('.peso').mask('000,00', {reverse: true});
     $(".peso").change(function(){
         $("#value").html($(this).val().replace(/\D/g,''))
     })

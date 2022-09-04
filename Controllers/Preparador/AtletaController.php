@@ -14,6 +14,8 @@ class AtletaController extends MainModel
     public function cadastrarAtleta($dados):string
     {
         unset($dados['_method']);
+        $dados['peso'] = str_replace(",",".",$dados['peso']);
+        $dados['altura'] = str_replace(",",".",$dados['altura']);
         $dados = MainModel::limpaPost($dados);
 
         $insert = DbModel::insert("athletes", $dados);
@@ -47,6 +49,8 @@ class AtletaController extends MainModel
     {
         unset($dados['_method']);
         unset($dados['id']);
+        $dados['peso'] = str_replace(",",".",$dados['peso']);
+        $dados['altura'] = str_replace(",",".",$dados['altura']);
         $dados = MainModel::limpaPost($dados);
         $id = MainModel::decryption($id);
         $update = DbModel::update('athletes', $dados, $id);

@@ -42,7 +42,7 @@ if ($id){
                                 <div class="row">
                                     <div class="form-group col-md-4">
                                         <label for="user">Usuários disponíveis *</label>
-                                        <select class="form-control" name="user_id" id="user" required>
+                                        <select class="form-control select2bs4" name="user_id" id="user" required>
                                             <option value="">Selecione uma opção...</option>
                                             <?php
                                             $atletaObj->geraOpcaoNovoAtleta($atleta->user_id ?? null);
@@ -74,7 +74,7 @@ if ($id){
                                 </div>
                                 <div class="form-group col-md-1">
                                     <label for="percentual_gordura">% Gordura: *</label>
-                                    <input type="number" class="form-control" id="percentual_gordura" name="percentual_gordura" min="0" max="99" value="<?= $atleta->percentual_gordura ?? null ?>" required>
+                                    <input type="number" class="form-control" id="percentual_gordura" name="percentual_gordura" min="0" max="99" maxlength="2" value="<?= $atleta->percentual_gordura ?? null ?>" required>
                                 </div>
                             </div>
                             <div class="row">
