@@ -35,6 +35,7 @@ $usuarios = $usuarioObj->listarUsuario();
                         <table id="tabela" class="table table-bordered table-striped">
                             <thead>
                             <tr>
+                                <th>Foto</th>
                                 <th>Apelido</th>
                                 <th>Perfil</th>
                                 <th>Ação</th>
@@ -43,6 +44,9 @@ $usuarios = $usuarioObj->listarUsuario();
                             <tbody>
                             <?php foreach ($usuarios as $usuario): ?>
                             <tr>
+                                <td style="width: 40px">
+                                    <img class="direct-chat-img" src="<?= SERVERURL ?>views/dist/img/user.png" alt="User Image">
+                                </td>
                                 <td><?=$usuario->apelido ?></td>
                                 <td><?=$usuario->perfil ?></td>
                                 <td class="d-flex flex-row justify-content-around">
@@ -59,6 +63,7 @@ $usuarios = $usuarioObj->listarUsuario();
                             </tbody>
                             <tfoot>
                             <tr>
+                                <th>Foto</th>
                                 <th>Apelido</th>
                                 <th>Perfil</th>
                                 <th>Ação</th>
