@@ -50,7 +50,7 @@ if ($id){
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="equipe">Equipe: *</label>
-                                    <input type="text" class="form-control" id="equipe" name="equipe" maxlength="120" value="<?= $equipe->equipe ?? null ?>" required>
+                                    <input type="text" class="form-control" id="equipe" name="equipe" maxlength="20" value="<?= $equipe->equipe ?? null ?>" required>
                                 </div>
                             </div>
                         </div>
