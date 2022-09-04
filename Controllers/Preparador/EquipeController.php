@@ -74,9 +74,14 @@ class EquipeController extends MainModel
      * <p>Lista para equipe</p>
      * @return array|false
      */
+
     public function listarEquipe()
     {
-        return DbModel::lista('teams');
+        return $this->consultaSimples("
+            SELECT t.id, t.equipe, t.modality_id, m.modalidade
+            FROM teams t
+            INNER JOIN modalities m on t.modality_id = m.id
+        ")->fetchAll(\PDO::FETCH_OBJ);
     }
 
     /**
