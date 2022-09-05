@@ -81,7 +81,7 @@ CREATE TABLE IF NOT EXISTS `athletes_has_assimetry` (
 -- Copiando estrutura para tabela sportsdb.efforts
 CREATE TABLE IF NOT EXISTS `efforts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `athete_id` int(11) NOT NULL,
+  `athlete_id` int(11) NOT NULL,
   `data` date NOT NULL,
   `psr` smallint(2) NOT NULL,
   `pse` smallint(2) NOT NULL,
@@ -90,8 +90,8 @@ CREATE TABLE IF NOT EXISTS `efforts` (
   `stress` smallint(2) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_efforts_sleeping_hours1_idx` (`sleeping_hour_id`),
-  KEY `fk_efforts_athletes1_idx` (`athete_id`),
-  CONSTRAINT `fk_efforts_athletes1` FOREIGN KEY (`athete_id`) REFERENCES `athletes` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  KEY `fk_efforts_athletes1_idx` (`athlete_id`),
+  CONSTRAINT `fk_efforts_athletes1` FOREIGN KEY (`athlete_id`) REFERENCES `athletes` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_efforts_sleeping_hours1` FOREIGN KEY (`sleeping_hour_id`) REFERENCES `sleeping_hours` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

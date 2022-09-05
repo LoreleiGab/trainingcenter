@@ -4,7 +4,7 @@ namespace TrainingCenter\Controllers\Atleta;
 use TrainingCenter\Models\MainModel;
 use TrainingCenter\Models\DbModel;
 
-class AtletaController extends MainModel
+class EsforcoController extends MainModel
 {
     /**
      * <p>Cadastro de percepção do esforço</p>
@@ -14,6 +14,7 @@ class AtletaController extends MainModel
     public function cadastrarEsforco($dados):string
     {
         unset($dados['_method']);
+        $dados['athlete_id'] = MainModel::decryption($dados['athlete_id']);
         $dados = MainModel::limpaPost($dados);
 
         $insert = DbModel::insert("efforts", $dados);
@@ -74,9 +75,10 @@ class AtletaController extends MainModel
      * <p>Lista para percepção do esforço</p>
      * @return array|false
      */
-    public function listarEsforco()
+    public function listarEsforco($athete_id)
     {
-        return DbModel::lista('efforts');
+        $athete_id = MainModel::decryption($athete_id);
+        return $this->consultaSimples("SELECT * FROM efforts where athlete_id = '$athete_id' order by data desc")->fetchAll(\PDO::FETCH_OBJ);
     }
 
     /**
