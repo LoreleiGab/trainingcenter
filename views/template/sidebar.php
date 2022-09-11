@@ -107,6 +107,12 @@ $view = new ViewsController();
                 </a>
             </li>
             <li class="nav-item">
+                <a href="<?= SERVERURL ?>preparador/grupo_lista" class="nav-link" id="grupo_lista">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Grupo</p>
+                </a>
+            </li>
+            <li class="nav-item">
                 <a href="<?= SERVERURL ?>preparador/grupo_tipo_lista" class="nav-link" id="grupo_tipo_lista">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Tipo de Grupo</p>

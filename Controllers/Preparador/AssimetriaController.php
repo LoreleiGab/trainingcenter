@@ -4,27 +4,27 @@ namespace TrainingCenter\Controllers\Preparador;
 use TrainingCenter\Models\MainModel;
 use TrainingCenter\Models\DbModel;
 
-class GrupoController extends MainModel
+class AssimetriaController extends MainModel
 {
     /**
-     * <p>Cadastro de grupo</p>
+     * <p>Cadastro de assimetria</p>
      * @param $dados
      * @return string
      */
-    public function cadastrarGrupo($dados):string
+    public function cadastrarAssimetria($dados):string
     {
         unset($dados['_method']);
         $dados = MainModel::limpaPost($dados);
 
-        $insert = DbModel::insert("groups", $dados);
+        $insert = DbModel::insert("assimetrys", $dados);
         if ($insert->rowCount() >= 1) {
             $id = $this->connection()->lastInsertId();
             $alerta = [
                 'alerta' => 'sucesso',
-                'titulo' => 'Grupo cadastrado!',
+                'titulo' => 'Assimetria cadastrada!',
                 'texto' => 'Dados cadastrados com sucesso!',
                 'tipo' => 'success',
-                'location' => SERVERURL . "preparador/grupo_cadastro&id=".MainModel::encryption($id)
+                'location' => SERVERURL . "preparador/assimetria_cadastro&id=".MainModel::encryption($id)
             ];
         } else {
             $alerta = [
@@ -38,26 +38,26 @@ class GrupoController extends MainModel
     }
 
     /**
-     * <p>Edição de grupo</p>
+     * <p>Edição de assimetria</p>
      * @param $dados
      * @param $id
      * @return string
      */
-    public function editarGrupo($dados, $id):string
+    public function editarAssimetria($dados, $id):string
     {
         unset($dados['_method']);
         unset($dados['id']);
         $dados = MainModel::limpaPost($dados);
         $id = MainModel::decryption($id);
-        $update = DbModel::update('groups', $dados, $id);
+        $update = DbModel::update('assimetrys', $dados, $id);
 
         if ($update->rowCount() >= 1 || DbModel::connection()->errorCode() == 0) {
             $alerta = [
                 'alerta' => 'sucesso',
-                'titulo' => 'Grupo alterado com sucesso!',
+                'titulo' => 'Assimetria alterada com sucesso!',
                 'texto' => 'Dados alterados com sucesso!',
                 'tipo' => 'success',
-                'location' => SERVERURL . "preparador/grupo_cadastro&id=".MainModel::encryption($id)
+                'location' => SERVERURL . "preparador/assimetria_cadastro&id=".MainModel::encryption($id)
             ];
         } else {
             $alerta = [
@@ -71,43 +71,38 @@ class GrupoController extends MainModel
     }
 
     /**
-     * <p>Lista para grupo</p>
+     * <p>Lista para assimetria</p>
      * @return array|false
      */
-    public function listarGrupo()
+    public function listarAssimetria()
     {
-        return $this->consultaSimples("
-            SELECT g.id, g.data, gt.tipo_grupo, t.equipe
-            FROM `groups` g 
-            INNER JOIN group_types gt on g.group_type_id = gt.id
-            INNER JOIN teams t on g.team_id = t.id
-        ")->fetchAll(\PDO::FETCH_OBJ);
+        return DbModel::lista('assimetrys');
     }
 
     /**
-     * <p>Recupera um grupo através do id</p>
+     * <p>Recupera um assimetria através do id</p>
      * @param int|string $id
      * @return false|mixed|object
      */
-    public function recuperarGrupo($id)
+    public function recuperarAssimetria($id)
     {
-        return $this->getInfo('groups', $this->decryption($id))->fetchObject();
+        return $this->getInfo('assimetrys', $this->decryption($id))->fetchObject();
     }
     /**
-     * <p>Apagar grupo</p>
+     * <p>Apagar assimetria</p>
      * @param $id
      * @return string
      */
-    public function apagarGrupo($id):string
+    public function apagarAssimetria($id):string
     {
-        $apagar = $this->apaga("groups",$id);
+        $apagar = $this->apaga("assimetrys",$id);
         if ($apagar->rowCount() >= 1){
             $alerta = [
                 'alerta' => 'sucesso',
-                'titulo' => 'Grupo apagado!',
+                'titulo' => 'Assimetria apagada!',
                 'texto' => 'Dados alterados com sucesso!',
                 'tipo' => 'success',
-                'location' => SERVERURL . 'preparador/grupo_lista'
+                'location' => SERVERURL . 'preparador/assimetria_lista'
             ];
         } else {
             $alerta = [

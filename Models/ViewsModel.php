@@ -29,6 +29,8 @@ class ViewsModel
             'inicio',
             'login',
             'logout',
+            'assimetria_cadastro',
+            'assimetria_lista',
             'atleta_cadastro',
             'atleta_lista',
             'equipe_cadastro',
