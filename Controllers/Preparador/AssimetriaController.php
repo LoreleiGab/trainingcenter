@@ -16,6 +16,13 @@ class AssimetriaController extends MainModel
         unset($dados['_method']);
         $dados = MainModel::limpaPost($dados);
 
+        $dados['flex_joelho_direito'] = str_replace(",",".",$dados['flex_joelho_direito']);
+        $dados['flex_joelho_esquerdo'] = str_replace(",",".",$dados['flex_joelho_esquerdo']);
+        $dados['exten_joelho_direito'] = str_replace(",",".",$dados['exten_joelho_direito']);
+        $dados['exten_joelho_esquerdo'] = str_replace(",",".",$dados['exten_joelho_esquerdo']);
+        $dados['relacao_joelho_direito'] = str_replace(",",".",$dados['relacao_joelho_direito']);
+        $dados['relacaoiq_joelho_esquerdo'] = str_replace(",",".",$dados['relacaoiq_joelho_esquerdo']);
+
         $insert = DbModel::insert("assimetrys", $dados);
         if ($insert->rowCount() >= 1) {
             $id = $this->connection()->lastInsertId();
@@ -47,6 +54,14 @@ class AssimetriaController extends MainModel
     {
         unset($dados['_method']);
         unset($dados['id']);
+
+        $dados['flex_joelho_direito'] = str_replace(",",".",$dados['flex_joelho_direito']);
+        $dados['flex_joelho_esquerdo'] = str_replace(",",".",$dados['flex_joelho_esquerdo']);
+        $dados['exten_joelho_direito'] = str_replace(",",".",$dados['exten_joelho_direito']);
+        $dados['exten_joelho_esquerdo'] = str_replace(",",".",$dados['exten_joelho_esquerdo']);
+        $dados['relacao_joelho_direito'] = str_replace(",",".",$dados['relacao_joelho_direito']);
+        $dados['relacaoiq_joelho_esquerdo'] = str_replace(",",".",$dados['relacaoiq_joelho_esquerdo']);
+
         $dados = MainModel::limpaPost($dados);
         $id = MainModel::decryption($id);
         $update = DbModel::update('assimetrys', $dados, $id);
@@ -76,7 +91,11 @@ class AssimetriaController extends MainModel
      */
     public function listarAssimetria()
     {
-        return DbModel::lista('assimetrys');
+        return $this->consultaSimples("
+            SELECT a.id, at.nome_completo
+            FROM assimetrys a 
+            INNER JOIN athletes at on a.athlete_id = at.id
+        ")->fetchAll(\PDO::FETCH_OBJ);
     }
 
     /**

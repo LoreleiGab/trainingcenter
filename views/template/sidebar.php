@@ -101,6 +101,12 @@ $view = new ViewsController();
                 </a>
             </li>
             <li class="nav-item">
+                <a href="<?= SERVERURL ?>preparador/assimetria_lista" class="nav-link" id="assimetria_lista">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Assimetria</p>
+                </a>
+            </li>
+            <li class="nav-item">
                 <a href="<?= SERVERURL ?>preparador/equipe_lista" class="nav-link" id="equipe_lista">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Equipe</p>

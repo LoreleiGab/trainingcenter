@@ -337,4 +337,9 @@ $(document).ready(function(){
     $(".peso").change(function(){
         $("#value").html($(this).val().replace(/\D/g,''))
     })
+
+    $('.decimal2-1').mask('00,0', {reverse: true});
+    $(".decimal2-1").change(function(){
+        $("#value").html($(this).val().replace(/\D/g,''))
+    })
 });
