@@ -1,6 +1,6 @@
 <?php
 
-use TrainingCenter\Controllers\Preparador\GrupoTipoController;
+use TrainingCenter\Controllers\Administrativo\GrupoTipoController;
 $grupoTipoObj = new GrupoTipoController();
 
 $id = $_GET['id'] ?? null;

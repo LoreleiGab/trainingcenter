@@ -1,6 +1,6 @@
 <?php
 
-use TrainingCenter\Controllers\Preparador\GrupoTipoController;
+use TrainingCenter\Controllers\Administrativo\GrupoTipoController;
 $gruposTipoObj = new GrupoTipoController();
 
 $grupos_tipos = $gruposTipoObj->listarGrupoTipo();
