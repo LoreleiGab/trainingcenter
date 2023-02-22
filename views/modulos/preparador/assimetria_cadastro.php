@@ -69,7 +69,7 @@ if ($id){
                                     <input type="text" class="form-control decimal2-1" id="relacao_joelho_direito" name="relacao_joelho_direito" maxlength="5" value="<?= $assimetria->relacao_joelho_direito ?? null ?>" required>
                                 </div>
                                 <div class="form-group col-md">
-                                    <label for="relacaoiq_joelho_esquerdo">Relação joelho direito: *</label>
+                                    <label for="relacaoiq_joelho_esquerdo">Relação joelho esquerdo: *</label>
                                     <input type="text" class="form-control decimal2-1" id="relacaoiq_joelho_esquerdo" name="relacaoiq_joelho_esquerdo" maxlength="5" value="<?= $assimetria->relacaoiq_joelho_esquerdo ?? null ?>" required>
                                 </div>
                             </div>
