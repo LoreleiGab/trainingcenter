@@ -10,7 +10,7 @@ if (isset($_POST['email']) && (isset($_POST['senha']))) {
     <div class="card">
         <div class="card-header bg-dark">
             <a href="<?= SERVERURL ?>inicio" class="brand-link">
-                <img src="<?= SERVERURL ?>views/dist/img/logo.png" alt="GesP Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <img src="<?= SERVERURL ?>views/dist/img/logo.png" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
                 <h5><span class="brand-text font-weight-light"><?= NOMESIS ?></span></h5>
             </a>
         </div>
