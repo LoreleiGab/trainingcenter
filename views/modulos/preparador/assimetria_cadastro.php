@@ -49,20 +49,20 @@ if ($id){
                                     </select>
                                 </div>
                                 <div class="form-group col-md">
-                                    <label for="flex_joelho_direito">Flex. joelho direito: *</label>
-                                    <input type="text" class="form-control decimal2-1" id="flex_joelho_direito" name="flex_joelho_direito" maxlength="5" value="<?= $assimetria->flex_joelho_direito ?? null ?>" required>
-                                </div>
-                                <div class="form-group col-md">
-                                    <label for="flex_joelho_esquerdo">Flex. joelho esquerdo: *</label>
-                                    <input type="text" class="form-control decimal2-1" id="flex_joelho_esquerdo" name="flex_joelho_esquerdo" maxlength="5" value="<?= $assimetria->flex_joelho_esquerdo ?? null ?>" required>
-                                </div>
-                                <div class="form-group col-md">
                                     <label for="exten_joelho_direito">Exten. joelho direito: *</label>
                                     <input type="text" class="form-control decimal2-1" id="exten_joelho_direito" name="exten_joelho_direito" maxlength="5" value="<?= $assimetria->exten_joelho_direito ?? null ?>" required>
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="exten_joelho_esquerdo">Exten. joelho esquerdo: *</label>
                                     <input type="text" class="form-control decimal2-1" id="exten_joelho_esquerdo" name="exten_joelho_esquerdo" maxlength="5" value="<?= $assimetria->exten_joelho_esquerdo ?? null ?>" required>
+                                </div>
+                                <div class="form-group col-md">
+                                    <label for="flex_joelho_direito">Flex. joelho direito: *</label>
+                                    <input type="text" class="form-control decimal2-1" id="flex_joelho_direito" name="flex_joelho_direito" maxlength="5" value="<?= $assimetria->flex_joelho_direito ?? null ?>" required>
+                                </div>
+                                <div class="form-group col-md">
+                                    <label for="flex_joelho_esquerdo">Flex. joelho esquerdo: *</label>
+                                    <input type="text" class="form-control decimal2-1" id="flex_joelho_esquerdo" name="flex_joelho_esquerdo" maxlength="5" value="<?= $assimetria->flex_joelho_esquerdo ?? null ?>" required>
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="relacao_joelho_direito">Relação joelho direito: *</label>
