@@ -130,7 +130,7 @@ $view = new ViewsController();
             <li class="nav-item">
                 <a href="<?= SERVERURL ?>atleta/esforco_lista" class="nav-link" id="esforco_lista">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Percepção do esforço</p>
+                    <p>PSE – Esforço</p>
                 </a>
             </li>
 
