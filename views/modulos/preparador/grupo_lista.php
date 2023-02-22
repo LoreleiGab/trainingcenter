@@ -36,7 +36,7 @@ $grupos = $gruposObj->listarGrupo();
                             <thead>
                             <tr>
                                 <th>Equipe</th>
-                                <th>Tipo</th>
+                                <th>Tipo do grupo</th>
                                 <th>Data</th>
                                 <th>Ação</th>
                             </tr>

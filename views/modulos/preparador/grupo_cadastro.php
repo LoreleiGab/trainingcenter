@@ -49,7 +49,7 @@ if ($id){
                                     </select>
                                 </div>
                                 <div class="form-group col-md">
-                                    <label for="group_type">Tipo *</label>
+                                    <label for="group_type">Tipo do grupo *</label>
                                     <select class="form-control" name="group_type_id" id="group_type" required>
                                         <option value="">Selecione uma opção...</option>
                                         <?php
