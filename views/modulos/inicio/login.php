@@ -53,7 +53,7 @@ if (isset($_POST['email']) && (isset($_POST['senha']))) {
             </div>
         </div>
         <div class="card-footer bg-light-gradient text-center">
-            Empresa.com
+            <a href="https://www.flinformatica.com.br/" target="_blank">FL Consultoria em Informática</a>
         </div>
     </div><!-- /.card -->
 </div>
