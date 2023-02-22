@@ -13,7 +13,7 @@ $grupos_tipos = $gruposTipoObj->listarGrupoTipo();
                 <h1 class="m-0 text-dark">Tipos e grupo</h1>
             </div><!-- /.col -->
             <div class="col-2">
-                <a href="<?= SERVERURL ?>preparador/grupo_tipo_cadastro" class="btn btn-success btn-block"><i class="fas fa-plus"></i> Adicionar</a>
+                <a href="<?= SERVERURL ?>administrativo/grupo_tipo_cadastro" class="btn btn-success btn-block"><i class="fas fa-plus"></i> Adicionar</a>
             </div><!-- /.col -->
         </div><!-- /.row -->
     </div><!-- /.container-fluid -->
@@ -44,7 +44,7 @@ $grupos_tipos = $gruposTipoObj->listarGrupoTipo();
                             <tr>
                                 <td><?= $grupo_tipo->tipo_grupo ?></td>
                                 <td class="d-flex flex-row justify-content-around">
-                                    <a href="<?= SERVERURL . "preparador/grupo_tipo_cadastro&id=" . $gruposTipoObj->encryption($grupo_tipo->id) ?>" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i> Editar</a>
+                                    <a href="<?= SERVERURL . "administrativo/grupo_tipo_cadastro&id=" . $gruposTipoObj->encryption($grupo_tipo->id) ?>" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i> Editar</a>
                                     <form class="form-horizontal formulario-ajax" method="POST" action="<?= SERVERURL ?>ajax/grupoTipoAjax.php" role="form" data-form="delete">
                                         <input type="hidden" name="_method" value="apagaGrupoTipo">
                                         <input type="hidden" name="id" value="<?= $grupo_tipo->id ?>">
