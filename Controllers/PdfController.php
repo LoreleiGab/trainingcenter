@@ -10,7 +10,7 @@ class PdfController extends FPDF
     function Header()
     {
         // Logo
-        $this->Image('../views/dist/img/CULTURA_HORIZONTAL_pb_positivo.png', 20, 10);
+        $this->Image('../views/dist/img/logo.png', 20, 10);
         // Arial bold 15
         $this->SetFont('Arial','B',18);
         // Move to the right

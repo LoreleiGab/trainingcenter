@@ -111,7 +111,7 @@ $objUsuario = new UsuarioController();
             </div>
         </div>
         <div class="card-footer bg-light-gradient text-center">
-            <img src="<?= SERVERURL ?>views/dist/img/CULTURA_HORIZONTAL_pb_positivo.png" alt="logo cultura">
+            <img src="<?= SERVERURL ?>views/dist/img/logo.png" alt="logo">
         </div>
     </div><!-- /.card -->
 </div>
