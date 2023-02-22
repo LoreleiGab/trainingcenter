@@ -38,7 +38,7 @@ if ($id){
                         <input type="hidden" name="id" value="<?= $id ?>">
                         <input type="hidden" name="modified" value="<?= date('Y-m-d H:i:s') ?>">
                     <?php else: ?>
-                        <input type="hidden" name="password" value="training9865!#">
+                        <input type="hidden" name="password" value="trainingcenter123">
                         <input type="hidden" name="created" value="<?= date('Y-m-d H:i:s') ?>">
                     <?php endif; ?>
                         <div class="card-body">
@@ -63,7 +63,7 @@ if ($id){
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="tel_usuario">Telefone* </label>
-                                    <input type="text" id="tel_usuario" name="telefone" class="form-control" onkeyup="mascara( this, mtel );" required maxlength="15" value="<?= $usuario->telefone ?>">
+                                    <input type="text" id="tel_usuario" name="telefone" class="form-control" onkeyup="mascara( this, mtel );" required maxlength="15" value="<?= $usuario->telefone ?? null ?>">
                                 </div>
 
                                 <div class="form-group col-md">

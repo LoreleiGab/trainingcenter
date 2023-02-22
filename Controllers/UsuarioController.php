@@ -87,7 +87,7 @@ class UsuarioController extends UsuarioModel
                 $alerta = [
                     'alerta' => 'sucesso',
                     'titulo' => 'Usuário Cadastrado!',
-                    'texto' => 'Usuário cadastrado com sucesso!<br> Senha temporária: <b>training9865!#</b>',
+                    'texto' => 'Usuário cadastrado com sucesso!<br> Senha temporária: <b>trainingcenter123</b>',
                     'tipo' => 'success',
                     'location' => SERVERURL . "administrativo/usuario_cadastro&id=".MainModel::encryption($id)
                 ];
