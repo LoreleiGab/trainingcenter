@@ -40,7 +40,7 @@
             </div>
         </div>
         <div class="card-footer bg-light-gradient text-center">
-            <img src="<?= SERVERURL ?>views/dist/img/logo.png" alt="logo">
+            <img src="<?= SERVERURL ?>views/dist/img/logo.png" alt="logo" height="50px">
         </div>
     </div><!-- /.card -->
 </div>
