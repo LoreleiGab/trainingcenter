@@ -1,5 +1,5 @@
 <?php
-namespace TrainingCenter\Controllers\Preparador;
+namespace TrainingCenter\Controllers\Administrativo;
 
 use TrainingCenter\Models\MainModel;
 use TrainingCenter\Models\DbModel;
