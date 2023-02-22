@@ -10,7 +10,7 @@ $assimetrias = $assimetriaObj->listarAssimetria();
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-10">
-                <h1 class="m-0 text-dark">Assimetrias</h1>
+                <h1 class="m-0 text-dark">Testes de força</h1>
             </div><!-- /.col -->
             <div class="col-2">
                 <a href="<?= SERVERURL ?>preparador/assimetria_cadastro" class="btn btn-success btn-block"><i class="fas fa-plus"></i> Adicionar</a>
