@@ -1,5 +1,5 @@
 <?php
-    define('SERVER', "127.0.0.1");
+    define('SERVER', "127.0.0.1:9000");
 
     define('DB1', "sportsdb");
     define('USER1', "root");

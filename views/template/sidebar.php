@@ -103,7 +103,7 @@ $view = new ViewsController();
             <li class="nav-item">
                 <a href="<?= SERVERURL ?>preparador/assimetria_lista" class="nav-link" id="assimetria_lista">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Assimetria</p>
+                    <p>Teste de força</p>
                 </a>
             </li>
             <li class="nav-item">
