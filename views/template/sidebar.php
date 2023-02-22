@@ -84,6 +84,13 @@ $view = new ViewsController();
                         </li>
 
                         <li class="nav-item">
+                            <a href="<?= SERVERURL ?>administrativo/grupo_tipo_lista" class="nav-link" id="grupo_tipo_lista">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Tipo de Grupo</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
                             <a href="<?= SERVERURL ?>administrativo/usuario_lista" class="nav-link" id="usuario_lista">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Usuários</p>
@@ -116,12 +123,6 @@ $view = new ViewsController();
                 <a href="<?= SERVERURL ?>preparador/grupo_lista" class="nav-link" id="grupo_lista">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Grupo</p>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="<?= SERVERURL ?>preparador/grupo_tipo_lista" class="nav-link" id="grupo_tipo_lista">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Tipo de Grupo</p>
                 </a>
             </li>
 
