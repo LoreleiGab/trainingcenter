@@ -343,3 +343,30 @@ $(document).ready(function(){
         $("#value").html($(this).val().replace(/\D/g,''))
     })
 });
+
+$(document).ready(function(){
+    const extenDiInput = document.getElementById('exten_joelho_direito');
+    const flexDiInput = document.getElementById('flex_joelho_direito');
+    const resultadoDi = document.getElementById('relacao_joelho_direito');
+
+    // Adiciona um evento de escuta de mudança de valor aos campos de entrada
+    extenDiInput.addEventListener('input', atualizaResultado);
+    flexDiInput.addEventListener('input', atualizaResultado);
+
+    // Define a função que será chamada sempre que um dos campos de entrada for alterado
+    function atualizaResultado() {
+        // Obtém os valores dos campos de entrada e converte para números
+        const exten = Number(extenDiInput.value);
+        const flex = Number(flexDiInput.value);
+
+        // Verifica se os valores são válidos antes de fazer a divisão
+        if (exten && flex) {
+            const resultado = flex / exten;
+
+            // Exibe o resultado no elemento de exibição
+            resultadoDi.textContent = `${resultado.toFixed(1)}`;
+        } else {
+            resultadoDi.textContent = '';
+        }
+    }
+});
