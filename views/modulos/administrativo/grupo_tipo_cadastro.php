@@ -47,7 +47,7 @@ if ($id){
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer">
-                            <a href="<?= SERVERURL ?>preparador/grupo_tipo_lista">
+                            <a href="<?= SERVERURL ?>administrativo/grupo_tipo_lista">
                                 <button type="button" class="btn btn-default pull-left">Voltar</button>
                             </a>
                             <button type="submit" class="btn btn-info float-right">Gravar</button>
